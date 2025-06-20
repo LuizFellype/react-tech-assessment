@@ -4,7 +4,7 @@ import { AppPath } from "components";
 import { useAppNavigate } from "hooks";
 import { header_logo, header_logo_collapsed } from "assets";
 import { AppLayoutContext } from "..";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
 
 const { Sider } = Layout;
@@ -20,7 +20,7 @@ export function AppSidebar({ collapsed, setCollapsed }: AppSidebarProps) {
     token: { controlHeight, colorBgContainer, margin },
   } = theme.useToken();
 
-  const { sidebarItems } = useContext(AppLayoutContext);
+  const { sidebarItems, addSidebarItem } = useContext(AppLayoutContext);
 
   const topDefaultItems: MenuItemType[] = [
     {
@@ -37,6 +37,16 @@ export function AppSidebar({ collapsed, setCollapsed }: AppSidebarProps) {
       icon: <UserOutlined />,
     },
   ];
+
+  useEffect(() => {
+    const userPageOption: MenuItemType = {
+      key: AppPath.users,
+      label: "Users",
+      icon: <UserOutlined />,
+    };
+    
+    addSidebarItem(userPageOption);
+  }, [])
 
   const allMenuItems = [
     ...topDefaultItems,

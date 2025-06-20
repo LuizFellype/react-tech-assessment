@@ -8,6 +8,7 @@ const { Content } = Layout;
 export enum AppPath {
   any = "*",
   home = "/dashboard",
+  users = "/users",
   brandProfile = "/brandProfile",
   userProfile = "/profile",
   crud = "/",
