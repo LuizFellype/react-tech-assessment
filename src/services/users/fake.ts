@@ -1,7 +1,6 @@
 import FakeService from "services/base/fakeService";
-import { PaginatedResult, PaginatedSkipLimitResult } from "../base/interface";
+import { PaginatedSkipLimitResult } from "../base/interface";
 import { UserProfileData } from "services/userProfile/interface";
-import { RawUserData } from "./interface";
 
 const fakeUserForTestingPurpose: UserProfileData = {
   id: 4,

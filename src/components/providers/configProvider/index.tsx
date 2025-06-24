@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useGetBrandId, useUpdateBrandId } from "hooks";
-import { FullPageSpin } from "components";
 
 interface AppConfigProviderProps {
   children: JSX.Element | JSX.Element[];

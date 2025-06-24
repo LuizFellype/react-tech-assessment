@@ -19,7 +19,7 @@ const defaultState = {
 
 export const useManageUsersList = () => {
   const [pagination, setPagination] = useState<number>(defaultState.pagination);
-  const [limit, setLimit] = useState<number>(defaultState.limit);
+  const [limit] = useState<number>(defaultState.limit);
   const [filteredUsers, setFilteredUsers] = useState<UserProfileData[] | undefined>(defaultState.filteredUsers);
 
   const { data, isLoading, error, isSuccess } = useQuery({
