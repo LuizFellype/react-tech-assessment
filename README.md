@@ -75,6 +75,7 @@ Reference:
 - npm i
 - create a .env with the following key-value pairs
   - REACT_APP_API_URL=https://fake-api-owmo.onrender.com/dev
+  - REACT_APP_DUMMY_API_URL=https://dummyjson.com
   - REACT_APP_FAKE_API_MODE=false
 - npm start
 
@@ -141,6 +142,8 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+Tests are using the the `.env` file to get the fake api flag for tests using API services.
 
 ### `npm run build`
 

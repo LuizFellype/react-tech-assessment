@@ -4,4 +4,11 @@ export type PaginatedResult<T> = {
   prevCursor?: string;
 };
 
+export type PaginatedSkipLimitResult<T> = {
+  list: T[];
+  total?: number;
+  skip?: number;
+  limit?: number;
+};
+
 export type ElementIdType = string | number | undefined;
