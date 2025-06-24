@@ -6,7 +6,7 @@ import {
     Image
 } from "antd";
 
-import { useManageUsersList } from "hooks/react-query/user/useManageUsersList";
+import { useManageUsersList } from "hooks/useManageUsersList";
 import { UserProfileData } from "services/userProfile/interface";
 import UsersListFilter from "./Filter";
 import "./List.css";

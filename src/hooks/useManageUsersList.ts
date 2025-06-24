@@ -1,15 +1,8 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { PaginatedSkipLimitResult } from "services/base/interface";
 import { UserProfileData } from "services/userProfile/interface";
 import { useState } from "react";
-import UsersListService from "services/users";
-
-const defaultData = {
-  list: [],
-  total: 0,
-  skip: 0,
-  limit: 0
-}
+import { useGetUsers } from "./react-query/useGetUsers";
 
 const defaultState = {
   pagination: 1,
@@ -22,21 +15,7 @@ export const useManageUsersList = () => {
   const [limit] = useState<number>(defaultState.limit);
   const [filteredUsers, setFilteredUsers] = useState<UserProfileData[] | undefined>(defaultState.filteredUsers);
 
-  const { data, isLoading, error, isSuccess } = useQuery({
-    queryFn: async () => {
-      try {
-        const { list, total } = await UsersListService.getAll(pagination, limit)
-
-        if (!list) return defaultData;
-
-        return { list, total }
-      } catch (error) {
-        console.error("Error fetching users:", error);
-        return defaultData
-      }
-    },
-    queryKey: ["users", pagination, limit],
-  })
+  const { data, isLoading, error, isSuccess } = useGetUsers({ pagination, limit })
 
   const queryClient = useQueryClient();
 
