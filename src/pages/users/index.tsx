@@ -1,12 +1,11 @@
 
 import ContentLayout from "components/layout/content/contentLayout";
+import { UsersList } from "./component/List";
 
 export const UsersPage = () => {
-    
     return (
         <ContentLayout>
-            <h1>Users List</h1> 
-
+            <UsersList />
         </ContentLayout>
     );
 }

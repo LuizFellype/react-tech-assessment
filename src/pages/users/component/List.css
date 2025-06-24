@@ -1,0 +1,10 @@
+.user-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.title-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
