@@ -64,7 +64,15 @@ Reference:
 
 ---
 
-> EXTRA POINTS: WRITE HERE ANY EXTRA COMMENTS OR NOTES YOU FIND RELEVANT
+Solution:
+- Create Users Service to handle request to dummy users api
+- Create hook to manage users states (fetching, pagination and filters)
+- Create Users page
+- Create Users List Component using Ant Design Table (search by first and last name, sort by email)
+- Create hook to handle debounce when searching avoinding too many filters
+
+Sugestions:
+- Improve responsiviness UI throughout whole applicaiton.
 
 ---
 
